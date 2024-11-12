@@ -1,0 +1,42 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  # Trigger the workflow on push to the master branch or manually
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm i
+
+      # Step 4: Build the Angular app
+      - name: Build Angular app
+        run: npm run build
+
+      # Step 5: Create CNAME file
+      - name: Create CNAME file
+        run: echo "sleeptracker.itkamianets.com" > ./dist/sleeptracker/browser/CNAME
+
+      # Step 6: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: ./dist/sleeptracker/browser
