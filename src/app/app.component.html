@@ -1,1 +1,10 @@
-start
+<div class="timer-container">
+  <h1>{{ title }}</h1>
+  <div id="timer" class="timer">{{ formatTime() }}</div>
+  <div class="buttons">
+    <button (click)="startTimer()" [disabled]="isRunning" class="start">Старт</button>
+    <button (click)="stopTimer()" [disabled]="!isRunning" class="stop">Стоп</button>
+    <button (click)="clearData()" class="clear">Очистити дані</button>
+  </div>
+  <div id="storedData" class="stored-data"></div>
+</div>

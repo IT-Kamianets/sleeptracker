@@ -1,0 +1,142 @@
+/* Фон для всього екрану */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  min-height: 100vh; /* Забезпечує мінімальну висоту для тіла */
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center; /* Горизонтальне вирівнювання */
+  align-items: center; /* Вертикальне вирівнювання */
+  flex-direction: column;
+}
+
+/* Основний контейнер таймера */
+.timer-container {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Напівпрозорий фон */
+  padding: 30px 40px;
+  border-radius: 20px;
+  width: 100%; /* Розтягуємо контейнер на всю ширину */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрування контенту всередині контейнера */
+  justify-content: center; /* Центрування контенту всередині контейнера */
+}
+
+/* Заголовок */
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Стиль для таймера */
+.timer {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #333;
+  background-color: #fff;
+  padding: 15px 30px;
+  border-radius: 10px;
+  display: inline-block;
+  margin: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Кнопки */
+.buttons {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center; /* Центруємо кнопки */
+}
+
+button {
+  font-size: 1.1rem;
+  padding: 15px 30px;
+  margin: 0 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: #ccc;
+  opacity: 0.6;
+}
+
+/* Стиль для кнопки "Старт" */
+.start {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.start:hover {
+  background-color: #45a049;
+}
+
+/* Стиль для кнопки "Стоп" */
+.stop {
+  background-color: #f44336;
+  color: white;
+}
+
+.stop:hover {
+  background-color: #e53935;
+}
+
+/* Стиль для кнопки "Очищення даних" */
+.clear {
+  background-color: #ff9800;
+  color: white;
+}
+
+.clear:hover {
+  background-color: #fb8c00;
+}
+
+/* Виведення збережених записів */
+.stored-data {
+  margin-top: 40px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.entry {
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.entry:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.entry p {
+  margin: 0;
+  padding: 5px 0;
+  font-weight: 600;
+}
+
+.entry span {
+  font-weight: normal;
+  color: #777;
+}
